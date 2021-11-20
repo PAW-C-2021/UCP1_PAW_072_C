@@ -1,0 +1,48 @@
+﻿@model Perpustakaan.Models.Admin
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Admin</h1>
+
+<h4>Admin</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label  class="control-label">Nama Admin</label>
+                <input asp-for="NamaAdmin" class="form-control" />
+                <span asp-validation-for="NamaAdmin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Jabatan</label>
+                <input asp-for="Jabatan" class="form-control" />
+                <span asp-validation-for="Jabatan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Username</label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Password</label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

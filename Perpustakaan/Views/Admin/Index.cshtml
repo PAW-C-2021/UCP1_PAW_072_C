@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Perpustakaan.Models.Admin>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Admin</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nama Admin")
+            </th>
+            <th>
+                @Html.DisplayName("Jabatan Admin")
+            </th>
+            <th>
+                @Html.DisplayName("Username")
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jabatan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdAdmin"><i class="fa fa-marker fa-lg"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdAdmin"><i class="fas fa-list"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdAdmin"><i class="fa fa-trash-alt fa-lg"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

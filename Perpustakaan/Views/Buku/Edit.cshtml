@@ -1,0 +1,50 @@
+﻿@model Perpustakaan.Models.Buku
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Buku</h1>
+
+<h4>Buku</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdBuku" />
+            <div class="form-group">
+                <label  class="control-label">Judul Buku</label>
+                <input asp-for="JudulBuku" class="form-control" />
+                <span asp-validation-for="JudulBuku" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Harga</label>
+                <input asp-for="Harga" class="form-control" />
+                <span asp-validation-for="Harga" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Deskripsi</label>
+                <input asp-for="Deskripsi" class="form-control" />
+                <span asp-validation-for="Deskripsi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Kategori</label>
+                <select asp-for="IdKategori" class="form-control" asp-items="ViewBag.IdKategori"></select>
+                <span asp-validation-for="IdKategori" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

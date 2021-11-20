@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Perpustakaan.Models.Notum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Pinjam</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("ID Nota")
+            </th>
+            <th>
+                @Html.DisplayName("Tanggal Deadline")
+            </th>
+            <th>
+                @Html.DisplayName("Tanggal Pinjam")
+            </th>
+            <th>
+                @Html.DisplayName("Tanggal Kembali")
+            </th>
+            <th>
+                @Html.DisplayName("Denda")
+            </th>
+            <th>
+                @Html.DisplayName("Status")
+            </th>
+            <th>
+                @Html.DisplayName("Admin")
+            </th>
+            <th>
+                @Html.DisplayName("Peminjam")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglDeadline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglPinjam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglKembali)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Denda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAdminNavigation.NamaAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPeminjamNavigation.Nama)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdNota"><i class="fa fa-marker fa-lg"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdNota"><i class="fas fa-list"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdNota"><i class="fa fa-trash-alt fa-lg"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

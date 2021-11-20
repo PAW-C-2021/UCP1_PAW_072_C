@@ -1,0 +1,60 @@
+﻿@model Perpustakaan.Models.Notum
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Notum</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal Deadline")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TglDeadline)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal Pinjam")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TglPinjam)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal Kembali")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TglKembali)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Denda")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Denda)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Status")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Admin")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdAdminNavigation.NamaAdmin)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Peminjam")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdPeminjamNavigation.Nama)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdNota">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

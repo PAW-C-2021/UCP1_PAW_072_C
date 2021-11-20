@@ -1,0 +1,37 @@
+﻿@model Perpustakaan.Models.Admin
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details Admin</h1>
+
+<div>
+    <h4>Admin</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Nama Admin")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NamaAdmin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Jabatan")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Jabatan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Username")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+       
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdAdmin">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
